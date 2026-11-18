@@ -1,0 +1,31 @@
+{
+  "name": "zatca-integration",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ZATCA Phase 2 E-Invoicing Integration Service",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "check": "node --check src/server.js"
+  },
+  "dependencies": {
+    "axios": "^1.13.0",
+    "better-sqlite3": "^12.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.0",
+    "express": "^5.0.0",
+    "fast-xml-parser": "^5.0.0",
+    "helmet": "^8.0.0",
+    "libxml2-wasm": "^0.7.2",
+    "pino": "^9.0.0",
+    "qrcode": "^1.5.4",
+    "uuid": "^13.0.0",
+    "xmlbuilder2": "^3.1.1",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

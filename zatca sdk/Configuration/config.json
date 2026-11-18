@@ -1,0 +1,12 @@
+
+{
+  "xsdPath": "D:\\Multi Techno Projects\\zatca-integration\\zatca sdk\\Data\\Schemas\\xsds\\UBL2.1\\xsd\\maindoc\\UBL-Invoice-2.1.xsd",
+  "enSchematron": "D:\\Multi Techno Projects\\zatca-integration\\zatca sdk\\Data\\Rules\\schematrons\\CEN-EN16931-UBL.xsl",
+  "zatcaSchematron": "D:\\Multi Techno Projects\\zatca-integration\\zatca sdk\\Data\\Rules\\schematrons\\20210819_ZATCA_E-invoice_Validation_Rules.xsl",
+  "certPath": "",
+  "privateKeyPath": "",
+  "pihPath": "D:\\Multi Techno Projects\\zatca-integration\\zatca sdk\\Data\\PIH\\pih.txt",
+  "certPassword": "",
+  "inputPath": "D:\\Multi Techno Projects\\zatca-integration\\storage\\xml\\generated",
+  "usagePathFile": "D:\\Multi Techno Projects\\zatca-integration\\zatca sdk\\Configuration\\usage.txt"
+}
