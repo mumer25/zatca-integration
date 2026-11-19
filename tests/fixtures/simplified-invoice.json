@@ -1,0 +1,46 @@
+{
+  "id": "INV-SIMPLIFIED-0001",
+  "uuid": "b7e2c4a1-9f63-4d82-a510-6c8e3f2a7190",
+  "issueDate": "2026-11-19",
+  "issueTime": "10:00:00",
+  "supplyDate": "2026-11-19",
+  "icv": "2",
+  "pih": "NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==",
+  "invoiceTypeCode": "388",
+  "invoiceTypeName": "0200000",
+  "currency": "SAR",
+  "seller": {
+    "name": "Test Seller Company",
+    "vatNumber": "300000000000003",
+    "registrationNumber": "TEST123456",
+    "street": "King Fahd Road",
+    "buildingNumber": "1234",
+    "additionalNumber": "5678",
+    "neighborhood": "Al Olaya",
+    "city": "Riyadh",
+    "region": "Riyadh Region",
+    "postalCode": "12345",
+    "country": "SA"
+  },
+  "buyer": {
+    "name": "Test Buyer Company",
+    "vatNumber": "310000000000003",
+    "street": "Olaya Street",
+    "buildingNumber": "5678",
+    "additionalNumber": "1234",
+    "neighborhood": "Al Olaya",
+    "city": "Riyadh",
+    "region": "Riyadh Region",
+    "postalCode": "12345",
+    "country": "SA"
+  },
+  "item": {
+    "id": "ITEM-001",
+    "name": "Test Product",
+    "quantity": 2,
+    "unitCode": "PCE",
+    "unitPrice": 100,
+    "vatCategory": "S",
+    "vatRate": 15
+  }
+}

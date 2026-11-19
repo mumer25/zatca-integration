@@ -3,7 +3,8 @@ import { create } from "xmlbuilder2";
 const NS = {
   invoice: "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2",
   cac: "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2",
-  cbc: "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+  cbc: "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2",
+  ext: "urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
 };
 
 function money(value) {
@@ -132,14 +133,17 @@ export function generateStandardInvoiceXml(data) {
     throw new Error("Seller, buyer and item information are required.");
   }
 
-  if (
-    data.invoiceTypeCode !== "388" ||
-    data.invoiceTypeName !== "0100000"
-  ) {
-    throw new Error(
-      "This generator currently supports standard tax invoices only."
-    );
-  }
+ const supportedInvoiceTypes = {
+  "0100000": "Standard",
+  "0200000": "Simplified"
+};
+
+if (
+  data.invoiceTypeCode !== "388" ||
+  !supportedInvoiceTypes[data.invoiceTypeName]
+) {
+  throw new Error("Unsupported invoice type.");
+}
 
   if (!/^[0-9]{4}$/.test(data.seller.additionalNumber || "")) {
     throw new Error("Seller additional number must contain 4 digits.");
@@ -179,14 +183,15 @@ export function generateStandardInvoiceXml(data) {
 
   const currency = data.currency || "SAR";
 
-  const root = create({
-    version: "1.0",
-    encoding: "UTF-8"
-  }).ele("Invoice", {
-    xmlns: NS.invoice,
-    "xmlns:cac": NS.cac,
-    "xmlns:cbc": NS.cbc
-  });
+const root = create({
+  version: "1.0",
+  encoding: "UTF-8"
+}).ele("Invoice", {
+  xmlns: NS.invoice,
+  "xmlns:cac": NS.cac,
+  "xmlns:cbc": NS.cbc,
+  "xmlns:ext": NS.ext
+});
 
   addText(root, "UBLVersionID", "2.1");
   addText(root, "CustomizationID", "urn:cen.eu:en16931:2017");
